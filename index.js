@@ -3,11 +3,12 @@ import express from "express";
 import logger, {
   logUncaughtException,
   logUnhandledRejection,
-} from "./logger.js";
+} from "./startup/logger.js";
 import config from "./startup/config.js";
 import routes from "./startup/routes.js";
 import db from "./startup/db.js";
 import validation from "./startup/validation.js";
+import prod from "./startup/prod.js";
 
 const app = express();
 
@@ -17,6 +18,7 @@ routes(app);
 db();
 config();
 validation();
+prod(app);
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () =>
