@@ -169,3 +169,11 @@
 {"timestamp":"2024-01-28T02:08:04.697Z","level":"info","message":"Connected to mongodb://localhost/vidly..."}
 {"timestamp":"2024-01-28T02:08:18.376Z","level":"info","message":"Listening on port 5000..."}
 {"timestamp":"2024-01-28T02:08:18.394Z","level":"info","message":"Connected to mongodb://localhost/vidly..."}
+{"timestamp":"2024-01-30T17:44:06.099Z","level":"info","message":"Listening on port 5000..."}
+{"timestamp":"2024-01-30T17:44:06.136Z","level":"error","message":"unhandledRejection: db is not defined\nReferenceError: db is not defined\n    at file:///C:/Users/WorkPC/Desktop/CodeWithMosh/The%20Complete%20Node/vidly/startup/db.js:12:45\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"timestamp":"2024-01-30T17:47:04.029Z","level":"info","message":"Listening on port 5000..."}
+{"timestamp":"2024-01-30T17:47:04.047Z","level":"info","message":"Connected to localhost db..."}
+{"timestamp":"2024-01-30T17:48:55.129Z","level":"info","message":"Listening on port 5000..."}
+{"timestamp":"2024-01-30T17:48:58.318Z","level":"info","message":"Connected to mogodDB Atlas..."}
+{"timestamp":"2024-01-30T17:51:42.937Z","level":"info","message":"Listening on port 5000..."}
+{"timestamp":"2024-01-30T17:51:44.472Z","level":"info","message":"Connected to mogodDB Atlas..."}

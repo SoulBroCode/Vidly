@@ -1,5 +1,4 @@
 {
   "jwtPrivateKey": "",
-  "db": "mongodb://localhost/vidly",
-  "atlasDB": "mongodb+srv://admin:ppQjzNrRqmJsE7Xf@cluster0.qeurzkc.mongodb.net/?retryWrites=true&w=majority"
+  "db": "mongodb://localhost/vidly"
 }
