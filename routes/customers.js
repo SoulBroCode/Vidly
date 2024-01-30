@@ -1,4 +1,6 @@
 import validate from "../middleware/validate.js";
+import auth from "../middleware/auth.js";
+import admin from "../middleware/admin.js";
 import Customer, { validateCustomer } from "../models/customer.js";
 import express from "express";
 const router = express.Router();
@@ -41,7 +43,7 @@ router.put("/:id", async (req, res) => {
   res.send(customer);
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", [auth, admin], async (req, res) => {
   const customer = await Customer.findByIdAndRemove(req.params.id);
 
   if (!customer)

@@ -58,8 +58,15 @@ const rentalSchema = new mongoose.Schema({
 
 rentalSchema.statics.lookup = function (customerId, movieId) {
   return this.findOne({
-    "customer._id": customerId,
-    "movie._id": movieId,
+    "customer._id": new mongoose.Types.ObjectId(customerId),
+    "movie._id": new mongoose.Types.ObjectId(movieId),
+  });
+};
+
+rentalSchema.statics.lookupMany = function (customerId, movieId) {
+  return this.find({
+    "customer._id": new mongoose.Types.ObjectId(customerId),
+    "movie._id": new mongoose.Types.ObjectId(movieId),
   });
 };
 

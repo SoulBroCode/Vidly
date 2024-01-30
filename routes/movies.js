@@ -1,4 +1,6 @@
 import validate from "../middleware/validate.js";
+import auth from "../middleware/auth.js";
+import admin from "../middleware/admin.js";
 import Movie, { validateMovie } from "../models/movie.js";
 import Genre from "../models/genre.js";
 import express from "express";
@@ -51,7 +53,7 @@ router.put("/:id", validate(validateMovie), async (req, res) => {
   res.send(movie);
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", [auth, admin], async (req, res) => {
   const movie = await Movie.findByIdAndRemove(req.params.id);
 
   if (!movie)

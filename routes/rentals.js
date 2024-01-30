@@ -49,7 +49,7 @@ router.post("/", validate(validateRental), async (req, res) => {
     session.endSession();
     console.log("success");
   } catch (error) {
-    console.log("error111", error.message);
+    console.log("error", error.message);
   }
 });
 

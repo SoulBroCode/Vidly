@@ -1,6 +1,6 @@
-import validateObjectId from "../middleware/validateObjectId";
+import validateObjectId from "../middleware/validateObjectId.js";
 import validate from "../middleware/validate.js";
-import asyncMiddleware from "../middleware/async.js";
+// import asyncMiddleware from "../middleware/async.js";
 import auth from "../middleware/auth.js";
 import admin from "../middleware/admin.js";
 import Genre, { validateGenre } from "../models/genre.js";
