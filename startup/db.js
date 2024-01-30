@@ -3,6 +3,11 @@ import mongoose from "mongoose";
 import config from "config";
 
 export default function () {
-  const db = config.get("db");
-  mongoose.connect(db).then(() => logger.info(`Connected to ${db}...`));
+  const uri =
+    process.env.NODE_ENV === "development"
+      ? config.get("db")
+      : config.get("atlasDB");
+  mongoose
+    .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => logger.info(`Connected to ${db}...`));
 }
