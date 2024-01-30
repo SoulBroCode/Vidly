@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+config
 node_modules
 dist
 dist-ssr
@@ -22,4 +23,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-config
+
+.vercel
