@@ -9,11 +9,13 @@ import routes from "./startup/routes.js";
 import db from "./startup/db.js";
 import validation from "./startup/validation.js";
 import prod from "./startup/prod.js";
+import cors from "./startup/cors.js";
 
 const app = express();
 
 logUncaughtException();
 logUnhandledRejection();
+cors(app);
 routes(app);
 db();
 config();
@@ -32,4 +34,4 @@ console.log("Working");
 // const p = Promise.reject(new Error("Fail promise"));
 // p.then(() => console.log("Done"));
 
-module.exports = server;
+export default server;
