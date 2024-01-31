@@ -1,8 +1,10 @@
 import cors from "cors";
+import config from "config";
 
 export default function (app) {
-  if (process.env.NODE_ENV === "development") {
-    app.use(cors());
-    console.log("in development");
-  }
+  const corsOptions = {
+    origin: config.get("frontendOrigin"),
+    optionsSuccessStatus: 200,
+  };
+  app.use(cors(corsOptions));
 }
