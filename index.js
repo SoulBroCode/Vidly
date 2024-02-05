@@ -11,6 +11,12 @@ import validation from "./startup/validation.js";
 import prod from "./startup/prod.js";
 import cors from "./startup/cors.js";
 
+if (!process.env.NODE_ENV) {
+  throw new Error(
+    "FATAL ERROR: NODE_ENV is not defined. Set to either development or production"
+  );
+}
+
 const app = express();
 
 logUncaughtException();
@@ -22,12 +28,12 @@ config();
 validation();
 prod(app);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const server = app.listen(port, () =>
   logger.info(`Listening on port ${port}...`)
 );
 
-console.log("Working");
+console.log("Running in " + process.env.NODE_ENV);
 
 //throw new Error("Something is wrong");
 

@@ -1,19 +1,18 @@
 import logger from "./logger.js";
 import mongoose from "mongoose";
-import config from "config";
 
 export default function () {
+  const db = config("vidly_db", "FATAL ERROR: vidly_db is not defined.");
+
   mongoose
-    .connect(config.get("db"), {
+    .connect(db, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
     .then(() =>
       logger.info(
         `Connected to ${
-          process.env.NODE_ENV === "production"
-            ? "mogodDB Atlas"
-            : "localhost db"
+          process.env.NODE_ENV === "production" ? "mogodDB Atlas" : db
         }...`
       )
     )

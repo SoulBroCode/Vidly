@@ -1,7 +1,8 @@
-import config from "config";
+import config from "../utility/config";
 
 export default function () {
-  if (!config.get("jwtPrivateKey")) {
-    throw new Error("FATAL ERROR: jwtPrivateKey is not defined.");
-  }
+  config(
+    "vidly_jwtPrivateKey",
+    "FATAL ERROR: vidly_jwtPrivateKey is not defined."
+  );
 }
