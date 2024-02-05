@@ -1,8 +1,9 @@
 import logger from "./logger.js";
 import mongoose from "mongoose";
+import config from "../utility/config.js";
 
 export default function () {
-  const db = config("vidly_db", "FATAL ERROR: vidly_db is not defined.");
+  const db = config("db", "FATAL ERROR: vidly_db is not defined.");
 
   mongoose
     .connect(db, {

@@ -1,5 +1,5 @@
 import cors from "cors";
-import config from "../utility/config";
+import config from "../utility/config.js";
 
 export default function (app) {
   const origins = config(
