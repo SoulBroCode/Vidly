@@ -1,5 +1,9 @@
 {
   "db": "mongodb://localhost/vidly",
   "jwtPrivateKey": "unsecureKey",
-  "origins": ["http://localhost:4000", "https://localhost:4000"]
+  "origins": [
+    "http://localhost:4000",
+    "https://localhost:4000",
+    "https://localhost:5000"
+  ]
 }

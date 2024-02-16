@@ -4,6 +4,8 @@ import bcrypt from "bcrypt";
 import _ from "lodash";
 import User from "../models/user.js";
 import express from "express";
+import oauth2Client from "../config/oauthClient.js";
+
 const router = express.Router();
 
 router.post("/", validate(validateAuth), async (req, res) => {
@@ -15,6 +17,17 @@ router.post("/", validate(validateAuth), async (req, res) => {
 
   const token = user.generateAuthToken();
   res.send(token);
+});
+
+router.get("/google", async (req, res) => {
+  const url = oauth2Client.generateAuthUrl({
+    access_type: "offline",
+    scope: [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email",
+    ],
+  });
+  res.redirect(url);
 });
 
 function validateAuth(req) {
